@@ -20,7 +20,7 @@ $$W_{out} = V \cdot R'^T (R' \cdot R'^T + \beta I)^{-1},$$
 
 where $I$ is the identity matrix, $\beta$ is the regularization coefficient, and $R'$ is the transport of $R$.
 
-Once we finish the training as previously describe, we can continue to get the input in the testing phase and update the reservoir state $r(t)$, calculate the output (prediction) step by step by
+Once we finish the training as previously described, we can continue to get the input in the testing phase and update the reservoir state $r(t)$, calculate the output (prediction) step by step by
 
 $$V(t) = W_{out}\cdot r(t).$$
 
@@ -28,7 +28,7 @@ There are various hyperparameters to be optimized (I will introduce the hyperpar
 
 <h3>Short- and Long-term Chaotic Systems Prediction by Reservoir Computing</h3>
 
-We take two examples to get more familiar with reservoir computing: the Lorenz system and Mackey-Glass systems. 
+We take two examples: the Lorenz system and Mackey-Glass systems to show the short- and long-term prediction performance of reservoir computing. 
 
 The classic Lorenz chaotic system is a simplified model for atmospheric convection, which can be discribed by the three dimensional nonlinear differential equations:
 
@@ -40,9 +40,11 @@ $$\frac{dz}{dt}=xy-\beta_l z,$$
 
 where $x, y,$ and $z$ are proportional to the rate of convection, the horizontal and vertical temperature variation, respectively, and $\sigma_l, \rho_l,$ and $\beta_l$ are Lorenz system parameters. We use forth-order Runge-Kutta method with $dt=0.01$ and choose the parameter values as $\sigma_l=10, \rho_l=8/3$ and $\beta=26$ to generate chaotic trajectories. Run 'reservoir.m' to train the reservoir computer and make predictions, we obtain results:
 
+<p align="center">
+<img src='images/lorenz_prediction.png' width='800'>
+</p>
 
-
-
+We use RMSE (root-mean-square error) and DV (deviation value) to evaluate the performance of short- and long-term prediction, respectively. We define the DV calculation as follows: we place a uniform grid in a 2-d subspace with cell size $\Delta=0.05$, count the number of trajectory points in each cell for both the true and predicted attractors in a fixed time interval, and the DV is: ${\rm DV} = \sum_{i=1}^{m_x} \sum_{j=1}^{m_y} \sqrt{(f_{i,j} - \hat{f}_{i, j})^2 }$, where $m_x$ and $m_y$ are the total numbers of cells in the $x$ and $y$ directions, respectively, $f_{i, j}$ and $\hat{f}_{i, j}$ are the frequencies of visit to the cell ($i, j$) by the true and predicted trajectories, respectively.
 
 
 
