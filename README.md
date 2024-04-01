@@ -62,7 +62,11 @@ where $\tau$ is the delayed time, $a, b,$ and $c$ are parameters. We set $a=0.2,
 <img src='images/mg_prediction.png' width='800'>
 </p>
 
+Seems the reservoir is not capable of predicting complex tasks like Mackey-Glass system ... But, please wait! 
 
+As I mentioned before, we choose the hyperparameters by hand. However, the reservoir computing is extremenly sensitive to its hyperparameters. In other words, for simple tasks like the prediction of Lorenz system, the role of hyperparameters may not be obvious, but once the tasks are more complex, the hyperparameters are crucial to the performance. Let us move to hyperparameters optimization and see what our reservoir computing can achieve.
+
+<h3>Hyperparameters Optimization of Reservoir Computing</h3>
 
 
 
