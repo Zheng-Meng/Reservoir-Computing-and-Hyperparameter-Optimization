@@ -44,9 +44,23 @@ where $x, y,$ and $z$ are proportional to the rate of convection, the horizontal
 <img src='images/lorenz_prediction.png' width='800'>
 </p>
 
-We use RMSE (root-mean-square error) and DV (deviation value) to evaluate the performance of short- and long-term prediction, respectively. We define the DV calculation as follows: we place a uniform grid in a 2-d subspace with cell size $\Delta=0.05$, count the number of trajectory points in each cell for both the true and predicted attractors in a fixed time interval, and the DV is: ${\rm DV} = \sum_{i=1}^{m_x} \sum_{j=1}^{m_y} \sqrt{(f_{i,j} - \hat{f}_{i, j})^2 }$, where $m_x$ and $m_y$ are the total numbers of cells in the $x$ and $y$ directions, respectively, $f_{i, j}$ and $\hat{f}_{i, j}$ are the frequencies of visit to the cell ($i, j$) by the true and predicted trajectories, respectively.
+As can be seen in the figure above, the reservoir computer gives us a satisfactory performance on both short-term and long-term prediction. Note that the Lorenz system prediction is a relatively simple task so we choose a small network, and choose hyperparameters randomly. 
 
+We use RMSE (root-mean-square error) and DV (deviation value) to evaluate the performance of short- and long-term prediction, respectively. We define the DV calculation as follows: we place a uniform grid in a 2-d subspace with cell size $\Delta=0.05$, count the number of trajectory points in each cell for both the true and predicted attractors in a fixed time interval, and the DV is: 
 
+$${\rm DV} = \sum_{i=1}^{m_x} \sum_{j=1}^{m_y} \sqrt{(f_{i,j} - \hat{f}_{i, j})^2 },$$
+
+where $m_x$ and $m_y$ are the total numbers of cells in the $x$ and $y$ directions, respectively, $f_{i, j}$ and $\hat{f}_{i, j}$ are the frequencies of visit to the cell ($i, j$) by the true and predicted trajectories, respectively.
+
+The Mackey-Glass system is an infinite dimensional system described by a delayed differential equation:
+
+$$\dot{x}(t) = \frac{a x(t-\tau)}{1 + x(t-\tau)^c} - b x(t), $$
+
+where $\tau$ is the delayed time, $a, b,$ and $c$ are parameters. We set $a=0.2, b=0.1$, and $c=10$, and choose the delay time $\tau=30$ (which is a highly chaotic attractor with two positive Lyapunov exponents). Again, we choose hyperparameters rrandomly and run 'reservoir_mg.m' to train the reservoir computer and make predictions for the Mackey-Glass system:
+
+<p align="center">
+<img src='images/mg_prediction.png' width='800'>
+</p>
 
 
 
