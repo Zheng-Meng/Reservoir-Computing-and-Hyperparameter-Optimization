@@ -98,12 +98,12 @@ In order to understand more intuitively these hyperparameters and their impace, 
 
 | Hyperparameters | By hand | Random Search | Bayesian Optimization |
 |:---------------:|:-------:|:-------------:|:---------------------:|
-| $\rho$          | 0.5     | 5.82          | 5.82     |
-| $\gamma$        | 0.5     | 5.82          | 5.82     |
-| $\alpha$        | 0.5     | 5.82          | 5.82     |
-| $\beta$         | $10^{-5}$| 5.82          | 5.82     |
-| $k$             | 0.5     | 5.82          | 5.82     |
-| $\sigma$        | $10^{-5}$| 5.82          | 5.82     |
+| $\rho$          | 0.5     | 2.26          | 0.97                  |
+| $\gamma$        | 0.5     | 0.35          | 1.05                  |
+| $\alpha$        | 0.5     | 0.44          | 0.11                  |
+| $\beta$         | $10^{-5}$|  $10^{-7.4}$ | $10^{-6.2}$           |
+| $k$             | 0.5     | 0.20          | 0.93                  |
+| $\sigma$        | $10^{-5}$| $10^{-1.6}$  | $10^{-1.2}$           |
 
 
 
