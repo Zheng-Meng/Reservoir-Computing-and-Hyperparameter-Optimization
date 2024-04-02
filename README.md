@@ -86,11 +86,19 @@ Execute `'opt_random_search_mg.m'` to perform a random search for optimizing hyp
 
 As depicted in the figure, the reservoir computer successfully learned the short-term behavior of the Mackey-Glass system but failed to accurately reconstruct its long-term attractor. In theory, iterating for a sufficient long time could yield a set of optimal hyperparameters. However, here I suggest employing a more efficient algorithm: Bayesian optimization.
 
-Bayesian optimization is an efficient method for optimizing complex, costly-to-evaluate functions. It uses a probabilistic model to guide the search for optimal parameters, balancing exploration and exploitation. For Python, I use Bayesian optimization to determine the optimal hyperparameters. Meanwhile, for MATLAB codes, I employ a similar yet distinct method: surrogate optimization, which also yields optimal hyperparameters. Run `'opt_mg.m'` or ... to optimize hyperparameters in predictring Mackey-Glass system. Using the optimaized hyperparmeters, the reservoir computer produced the following results:
+Bayesian optimization is an efficient method for optimizing complex, costly-to-evaluate functions. It uses a probabilistic model to guide the search for optimal parameters, balancing exploration and exploitation. For Python, I use Bayesian optimization (see package ... ) to determine the optimal hyperparameters. Meanwhile, for MATLAB codes, I employ a similar yet distinct method: Surrogate optimization (see package ... ), which also yields optimal hyperparameters. Run `'opt_mg.m'` or ... to optimize hyperparameters in predictring Mackey-Glass system. Using the optimaized hyperparmeters, the reservoir computer produced the following results:
 
 <p align="center">
 <img src='images/mg_by_prediction.png' width='800'>
 </p>
+
+As depicted in the figure, the reservoir computer perfectly predicted the short-term behavior of the Mackey-Glass system with $\tau=30$ and successfully reconstructed the chaotic attractor. **Finally** **we** **made** **it!**
+
+In order to understand more intuitively these hyperparameters and their impace, I show the hyperparameters and the corresponding machine learning performance below:
+
+
+
+
 
 
 I am tired, let me continue to write tomorrow...
