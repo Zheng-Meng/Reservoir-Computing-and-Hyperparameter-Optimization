@@ -78,7 +78,14 @@ There are a numer of optimization strategies, such as grid search, random search
 
 Random search is a method where values are selected randomly within the search space. Suppose we need to optimize six hyperparameters, each with numerous possible values. Testing every combination (known as grid search) would result in high computation time. Random search, therefore, offers a more efficient alternative to grid search.
 
-Run `'opt_random_search_mg.m'` to perform random search hyperparameters optimization on Mackey-Glass system. We record the set of hyperparameters that cause the minimun RMSE on validation dataset. With the optimal hyperparameters, reservoir computer gives the following results:
+Run `'opt_random_search_mg.m'` to operate random search hyperparameters optimization on Mackey-Glass system. We record the set of hyperparameters that cause the minimun RMSE on validation dataset. With the optimal hyperparameters, reservoir computer gives the following results:
+
+<p align="center">
+<img src='images/mg_rs_prediction.png' width='800'>
+</p>
+
+As can be seen in the figure above, the reservoir computer learned short-term behavior of the Mackey-Glass system, but completely failed in long-term attractor reconstruction. Theoretically, if we iterate with sufficient long time, we can obtain a set of optimal hyperparameters, but here we recommend another more efficient algorithm: Bayesian optimization.
+
 
 
 
