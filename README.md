@@ -78,15 +78,19 @@ There are a numer of optimization strategies, such as grid search, random search
 
 Random search is a method where values are selected randomly within the search space. Suppose we need to optimize six hyperparameters, each with numerous possible values. Testing every combination (known as grid search) would result in high computation time. Random search, therefore, offers a more efficient alternative to grid search.
 
-Run `'opt_random_search_mg.m'` to operate random search hyperparameters optimization on Mackey-Glass system. We record the set of hyperparameters that cause the minimun RMSE on validation dataset. With the optimal hyperparameters, reservoir computer gives the following results:
+Execute `'opt_random_search_mg.m'` to perform a random search for optimizing hyperparameters in predicting Mackey-Glass system. We record the hyperparameter set that yields the lowest RMSE on the validation dataset. Using these optimal hyperparameters, the reservoir computer produced the following results:
 
 <p align="center">
 <img src='images/mg_rs_prediction.png' width='800'>
 </p>
 
-As can be seen in the figure above, the reservoir computer learned short-term behavior of the Mackey-Glass system, but completely failed in long-term attractor reconstruction. Theoretically, if we iterate with sufficient long time, we can obtain a set of optimal hyperparameters, but here we recommend another more efficient algorithm: Bayesian optimization.
+As depicted in the figure, the reservoir computer successfully learned the short-term behavior of the Mackey-Glass system but failed to accurately reconstruct its long-term attractor. In theory, iterating for a sufficient long time could yield a set of optimal hyperparameters. However, here I suggest employing a more efficient algorithm: Bayesian optimization.
 
+Bayesian optimization is an efficient method for optimizing complex, costly-to-evaluate functions. It uses a probabilistic model to guide the search for optimal parameters, balancing exploration and exploitation. For Python, I use Bayesian optimization to determine the optimal hyperparameters. Meanwhile, for MATLAB codes, I employ a similar yet distinct method: surrogate optimization, which also yields optimal hyperparameters. Run `'opt_mg.m'` or ... to optimize hyperparameters in predictring Mackey-Glass system. Using the optimaized hyperparmeters, the reservoir computer produced the following results:
 
+<p align="center">
+<img src='images/mg_by_prediction.png' width='800'>
+</p>
 
 
 I am tired, let me continue to write tomorrow...
