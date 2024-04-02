@@ -58,7 +58,7 @@ The **Mackey-Glass** system is an infinite dimensional system described by a del
 
 $$\dot{x}(t) = \frac{a x(t-\tau)}{1 + x(t-\tau)^c} - b x(t), $$
 
-where $\tau$ is the delayed time, $a, b,$ and $c$ are parameters. We set $a=0.2, b=0.1$, and $c=10$, and choose the delay time $\tau=30$ (which is a highly chaotic attractor with two positive Lyapunov exponents). Again, we choose hyperparameters rrandomly and run 'reservoir_mg.m' to train the reservoir computer and make predictions for the Mackey-Glass system:
+where $\tau$ is the delayed time, $a, b,$ and $c$ are parameters. We set $a=0.2, b=0.1$, and $c=10$, and choose the delay time $\tau=30$ (which is a highly chaotic attractor with two positive Lyapunov exponents). Again, we choose hyperparameters rrandomly and run `'reservoir_mg.m'` to train the reservoir computer and make predictions for the Mackey-Glass system:
 
 <p align="center">
 <img src='images/mg_prediction.png' width='800'>
@@ -70,6 +70,11 @@ As I mentioned before, we chose the hyperparameters by hand. However, reservoir 
 
 <h3>Hyperparameters Optimization of Reservoir Computing</h3>
 
+Hyperparameters optimization, also known as hyperparameter tuning, is a vital step in machine learning. Unlike model parameters, which are learned during training, hyperparameters are external configurations and are set prior to the training process and can significantly impact the performance of the model. 
+
+We typically separate our dataset into training, validation, and testing sets. We prepare various candidates of hyperparameters sets, train the reservoir computer and collect the performance on the validation dataset with each hyperparameters set. Then, we select a set of hyperparameters that yield the best performance on the validation dataset. We anticipate that these optimized hyperparameters will also perform well on the unseen testing set.
+
+There exists a numer of optimization strategies, such as grid search, random search, Bayesian optimization, evolutionary algorithms, and so on. Here we introduce two of them: **random search** and **Bayesian optimization**. 
 
 
 
