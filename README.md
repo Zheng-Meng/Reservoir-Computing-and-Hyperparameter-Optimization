@@ -74,7 +74,7 @@ Hyperparameters optimization, also known as hyperparameter tuning, is a vital st
 
 We typically separate our dataset into training, validation, and testing sets. We prepare various candidates of hyperparameters sets, train the reservoir computer and collect the performance on the validation dataset with each hyperparameters set. Then, we select a set of hyperparameters that yield the best performance on the validation dataset. We anticipate that these optimized hyperparameters will also perform well on the unseen testing set.
 
-There are a numer of optimization strategies, such as grid search, random search, Bayesian optimization, evolutionary algorithms, and so on. Here we introduce two of them: **random search** and **Bayesian optimization**. 
+There are a numer of optimization strategies, such as grid search, random search, Bayesian optimization, evolutionary algorithms, and so on. Here we introduce two of them: **Random search** and **Bayesian optimization**. 
 
 Random search is a method where values are selected randomly within the search space. Suppose we need to optimize six hyperparameters, each with numerous possible values. Testing every combination (known as grid search) would result in high computation time. Random search, therefore, offers a more efficient alternative to grid search.
 
