@@ -81,7 +81,7 @@ There are a numer of optimization strategies, such as grid search, random search
 Execute `'opt_random_search_mg.m'` to perform a random search for optimizing hyperparameters in predicting Mackey-Glass system. We record the hyperparameter set that yields the lowest RMSE on the validation dataset. Using these optimal hyperparameters, the reservoir computer produced the following results:
 
 <p align="center">
-<img src='images/mg_rs_prediction.png' width='800'>
+<img src='images/mg_rs_prediction1.png' width='800'>
 </p>
 
 As depicted in the figure, the reservoir computer successfully learned the short-term behavior of the Mackey-Glass system but failed to accurately reconstruct its long-term attractor. In theory, iterating for a sufficient long time could yield a set of optimal hyperparameters. However, here I suggest employing a more efficient algorithm: Bayesian optimization.
@@ -104,6 +104,12 @@ In order to understand more intuitively these hyperparameters and their impace, 
 | $\beta$         | $10^{-5}$|  $10^{-7.4}$ | $10^{-6.2}$           |
 | $k$             | 0.5     | 0.20          | 0.93                  |
 | $\sigma$        | $10^{-5}$| $10^{-1.6}$  | $10^{-1.2}$           |
+
+Comparing the average values of RMSE and DV of 16 iterations for different hyperparameters sets: 
+
+<p align="center">
+<img src='images/compare.png' width='800'>
+</p>
 
 
 
