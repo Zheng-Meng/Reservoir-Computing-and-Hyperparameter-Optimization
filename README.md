@@ -105,7 +105,7 @@ In order to understand more intuitively these hyperparameters and their impace, 
 | $k$             | 0.5     | 0.20          | 0.93                  |
 | $\sigma$        | $10^{-5}$| $10^{-1.6}$  | $10^{-1.2}$           |
 
-Comparing the average values of RMSE and DV of 16 iterations for different hyperparameters sets: 
+Run `'comparison.m'` to compare the average values of RMSE and DV of 16 iterations for different hyperparameters sets: 
 
 <p align="center">
 <img src='images/compare.png' width='800'>
