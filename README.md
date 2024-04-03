@@ -111,10 +111,7 @@ Comparing the average values of RMSE and DV of 16 iterations for different hyper
 <img src='images/compare.png' width='800'>
 </p>
 
-
-
-I am tired, let me continue to write tomorrow...
-
+In conclusion, reservoir computing is a powerful tool that can be applied to a variety of complex tasks. For simpler tasks, such as predicting the Lorenz system, a small reservoir network with randomly selected hyperparameters suffices. However, as tasks become more complex, optimizing hyperparameters becomes crucial for effective reservoir computing. Various optimization algorithms can be employed for this purpose, including random search and Bayesian optimization.
 
 
 
