@@ -113,6 +113,16 @@ Run `'comparison.m'` to compare the average values of RMSE and DV of 16 iteratio
 
 In conclusion, reservoir computing is a powerful tool that can be applied to a variety of complex tasks. For simpler tasks, such as predicting the Lorenz system, a small reservoir network with randomly selected hyperparameters suffices. However, as tasks become more complex, optimizing hyperparameters becomes crucial for effective reservoir computing. Various optimization algorithms can be employed for this purpose, including random search and Bayesian optimization.
 
+<h2>More information</h2>
+
+- The results have been generated using MATLAB, and a Python version is available which includes only the reservoir computing prediction and Bayesian optimization. 
+- You can find the chaotic prediction results for the food-chain, voltage, and spatial-temporal Kuramoto-Sivashinsky systems on my friend's [Github page](https://github.com/lw-kong/Reservoir_with_a_Parameter_Channel_PRR2021).
+- Some tips:
+    - Increasing the size of the reservoir network can significantly enhance performance. For efficient hyperparameter optimization, you might start with a relatively small network, and then use a larger network combined with the optimized hyperparameters.
+    - During hyperparameter optimization, consider setting a shorter prediction length initially and using a broader range of hyperparameters. After the initial optimization, in a second round, you can opt for a longer prediction length and narrow down the hyperparameters, focusing around the values obtained in the first round.
+
+If you have any questions or any suggestions, please do not hesitate to contact me.
+
 <h2>Cite our work</h2>
 
 ```
