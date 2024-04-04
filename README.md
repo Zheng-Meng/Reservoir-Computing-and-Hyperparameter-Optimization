@@ -115,10 +115,11 @@ In conclusion, reservoir computing is a powerful tool that can be applied to a v
 
 <h2>More information</h2>
 
-- The results were generated using MATLAB. A Python version is aslo available which includes only the reservoir computing prediction and Bayesian optimization. 
-- You can find the parameter aware reservoir computing for collapse prediction of the food-chain, voltage, and spatial-temporal Kuramoto-Sivashinsky systems on my friend's [Github page](https://github.com/lw-kong/Reservoir_with_a_Parameter_Channel_PRR2021).
-- You can find the nonlinear tracking control achieved by reservoir comptuing with various chaotic and periodic trajectories examples on my [Github page](https://github.com/Zheng-Meng/TrackingControl) .
-- You can find the parameters tracking by reservoir computing on my [Github page](https://github.com/Zheng-Meng/Parameter-Tracking-with-Machine-Learning).
+- The results were generated using MATLAB. A Python version is aslo available which includes only the reservoir computing prediction and Bayesian optimization.
+- Some applications:
+    - You can find the parameter aware reservoir computing for collapse prediction of the food-chain, voltage, and spatial-temporal Kuramoto-Sivashinsky systems on my friend's [Github page](https://github.com/lw-kong/Reservoir_with_a_Parameter_Channel_PRR2021).
+    - You can find the nonlinear tracking control achieved by reservoir comptuing with various chaotic and periodic trajectories examples on my [Github page](https://github.com/Zheng-Meng/TrackingControl) .
+    - You can find the parameters tracking by reservoir computing on my [Github page](https://github.com/Zheng-Meng/Parameter-Tracking-with-Machine-Learning).
 - Some tips:
     - Increasing the size of the reservoir network can significantly enhance performance. For efficient hyperparameter optimization, you might start with a relatively small network, and then use a larger network combined with the optimized hyperparameters.
     - During hyperparameter optimization, consider setting a shorter prediction length initially and using a broader range of hyperparameters. After the initial optimization, in a second round, you can opt for a longer prediction length and narrow down the hyperparameters, focusing around the values obtained in the first round.
