@@ -1,5 +1,5 @@
 
-<h1 align="center">Reservoir Computing and Hyperparameters Optimization</h1>
+<h1 align="center">Reservoir Computing and Hyperparameter Optimization</h1>
 
 <p align="center">
 <img src='images/rc.png' width='500'>
