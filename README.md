@@ -7,7 +7,7 @@
 
 <h3>Reservoir Computing</h3>
 
-Reservoir computing (RC), is a type of recurrent neural networks (RNNs). A reservoir computer is composed of three layers: an input layer, a hidden recurrent layer, and an output layer. The distinguishing feature of RC is that only the readout weights ($W_{out}$) are trained using a linear regression, while the input weigths ($W_{in}$) and recurrent connection weights within the reservoir ($\mathcal{A}$) are determined before training. This approach gives RC a notable advantage over other RNNs, particularly in terms of rapid learning.
+Reservoir computing (RC) is a type of recurrent neural networks (RNNs). A reservoir computer is composed of three layers: an input layer, a hidden recurrent layer, and an output layer. The distinguishing feature of RC is that only the readout weights ($W_{out}$) are trained using a linear regression, while the input weigths ($W_{in}$) and recurrent connection weights within the reservoir ($\mathcal{A}$) are determined before training. This approach gives RC a notable advantage over other RNNs, particularly in terms of rapid learning.
 
 Now suppose we have the training data: input $u$ and the corresponding output $v$, we first update the reservoir states $r$. Activated by the sequence of input signals $[u(1), u(2), \cdots, u(t)]$, the hidden layer state is updated step by step at the input signal time interval according to 
 
@@ -20,7 +20,7 @@ $$W_{out} = V \cdot R'^T (R' \cdot R'^T + \beta I)^{-1},$$
 
 where $I$ is the identity matrix, $\beta$ is the regularization coefficient, and $R'$ is the transport of $R$.
 
-Once we finish the training as previously described, we can continue to get the input in the testing phase and update the reservoir state $r(t)$, calculate the output (prediction) step by step by
+Once we finish the training as previously described, we can **continue** to get the input in the testing phase and update the reservoir state $r(t)$, calculate the output (prediction) step by step by
 
 $$V(t) = W_{out}\cdot r(t).$$
 
@@ -115,11 +115,12 @@ In conclusion, reservoir computing is a powerful tool that can be applied to a v
 
 <h2>More information</h2>
 
-- The results have been generated using MATLAB, and a Python version is available which includes only the reservoir computing prediction and Bayesian optimization. 
-- You can find the chaotic prediction results for the food-chain, voltage, and spatial-temporal Kuramoto-Sivashinsky systems on my friend's [Github page](https://github.com/lw-kong/Reservoir_with_a_Parameter_Channel_PRR2021).
+- The results were generated using MATLAB. A Python version is aslo available which includes only the reservoir computing prediction and Bayesian optimization. 
+- You can find the parameter aware reservoir computing results for the food-chain, voltage, and spatial-temporal Kuramoto-Sivashinsky systems on my friend's [Github page](https://github.com/lw-kong/Reservoir_with_a_Parameter_Channel_PRR2021).
 - Some tips:
     - Increasing the size of the reservoir network can significantly enhance performance. For efficient hyperparameter optimization, you might start with a relatively small network, and then use a larger network combined with the optimized hyperparameters.
     - During hyperparameter optimization, consider setting a shorter prediction length initially and using a broader range of hyperparameters. After the initial optimization, in a second round, you can opt for a longer prediction length and narrow down the hyperparameters, focusing around the values obtained in the first round.
+    - The reservoir state $r$ should be continuously maintained during both training and testing, and the final reservior state from training is the starting point for testing, to ensure seamless prediction.
 
 If you have any questions or any suggestions, please feel free to contact me.
 
