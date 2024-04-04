@@ -40,13 +40,13 @@ $$\frac{dy}{dt}=x(\rho_l - z) - y,$$
 
 $$\frac{dz}{dt}=xy-\beta_l z,$$
 
-where $x, y,$ and $z$ are proportional to the rate of convection, the horizontal and vertical temperature variation, respectively, and $\sigma_l, \rho_l,$ and $\beta_l$ are Lorenz system parameters. We use forth-order Runge-Kutta method with $dt=0.01$ and choose the parameter values as $\sigma_l=10, \rho_l=8/3$ and $\beta=26$ to generate chaotic trajectories. Run `'reservoir.m'` to train the reservoir computer and make predictions, we obtain the following results:
+where $x, y,$ and $z$ are proportional to the rate of convection, the horizontal and vertical temperature variation, respectively, and $\sigma_l, \rho_l,$ and $\beta_l$ are Lorenz system parameters. We use forth-order Runge-Kutta method with $dt=0.01$ and choose the parameter values as $\sigma_l=10, \rho_l=8/3$ and $\beta=26$ to generate chaotic trajectories. Run `'reservoir.m'` (or `'reservoir.py'`) to train the reservoir computer and make predictions, we can obtain the following results:
 
 <p align="center">
 <img src='images/lorenz_prediction.png' width='800'>
 </p>
 
-As can be seen in the figure above, the reservoir computer gives us a satisfactory performance on both short-term and long-term prediction. Note that the Lorenz system prediction is a relatively simple task so we choose a small network, and choose hyperparameters randomly. 
+As can be seen in the figure above, the reservoir computer gave us satisfactory performance on both short-term and long-term prediction. Note that the Lorenz system prediction is a relatively simple task so we choose a small network, and choose hyperparameters randomly. 
 
 We use **RMSE** (root-mean-square error) and **DV** (deviation value) to evaluate the performance of short- and long-term prediction, respectively. We define the DV calculation as follows: we place a uniform grid in a 2-d subspace with cell size $\Delta=0.05$, count the number of trajectory points in each cell for both the true and predicted attractors in a fixed time interval, and the DV is: 
 
@@ -58,7 +58,7 @@ The **Mackey-Glass** system is an infinite dimensional system described by a del
 
 $$\dot{x}(t) = \frac{a x(t-\tau)}{1 + x(t-\tau)^c} - b x(t), $$
 
-where $\tau$ is the delayed time, $a, b,$ and $c$ are parameters. We set $a=0.2, b=0.1$, and $c=10$, and choose the delay time $\tau=30$ (which is a highly chaotic attractor with two positive Lyapunov exponents). Again, we choose hyperparameters rrandomly and run `'reservoir_mg.m'` to train the reservoir computer and make predictions for the Mackey-Glass system:
+where $\tau$ is the delayed time, $a, b,$ and $c$ are parameters. We set $a=0.2, b=0.1$, and $c=10$, and choose the delay time $\tau=30$ (which is a highly chaotic attractor with two positive Lyapunov exponents). Again, we choose hyperparameters randomly and run `'reservoir_mg.m'` (or `'reservoir_mg.py'`) to train the reservoir computer and make predictions for the Mackey-Glass system:
 
 <p align="center">
 <img src='images/mg_prediction.png' width='800'>
@@ -66,7 +66,7 @@ where $\tau$ is the delayed time, $a, b,$ and $c$ are parameters. We set $a=0.2,
 
 Seems the reservoir is not capable of predicting complex tasks like Mackey-Glass system ... **But,** **please** **wait!** 
 
-As I mentioned before, we chose the hyperparameters by hand. However, reservoir computing is extremenly sensitive to its hyperparameters. In other words, for simple tasks like the prediction of Lorenz system, the role of hyperparameters may not be obvious, but once the tasks are more complex, the hyperparameters are crucial to the performance. Next I will introduce hyperparameters optimization and show the performance of our reservoir computing.
+As I mentioned before, we chose the hyperparameters by hand. However, reservoir computing is extremenly sensitive to its hyperparameters. In other words, for simple tasks like the prediction of Lorenz system, the role of hyperparameters may not be obvious, but once the tasks are more complex, the **hyperparameters** **are** **crucial** **to** **the** **performance.** Next I will introduce hyperparameters optimization and show the performance of our reservoir computing.
 
 <h3>Hyperparameters Optimization of Reservoir Computing</h3>
 
@@ -74,9 +74,9 @@ Hyperparameters optimization, also known as hyperparameter tuning, is a vital st
 
 We typically separate our dataset into training, validation, and testing sets. We prepare various candidates of hyperparameters sets, train the reservoir computer and collect the performance on the validation dataset with each hyperparameters set. Then, we select a set of hyperparameters that yield the best performance on the validation dataset. We anticipate that these optimized hyperparameters will also perform well on the unseen testing set.
 
-There are a numer of optimization strategies, such as grid search, random search, Bayesian optimization, evolutionary algorithms, and so on. Here we introduce two of them: **Random search** and **Bayesian optimization**. 
+There are a numer of optimization strategies, such as grid search, random search, Bayesian optimization, evolutionary algorithms, and so on. Here we introduce two of them: **Random search** and **Bayesian optimization**. (I will not go into the details of the algorithms, but will focus on the effects of using these algorithms.)
 
-**Random search** is a method where values are selected randomly within the search space. Suppose we need to optimize six hyperparameters, each with numerous possible values. Testing every combination (known as grid search) would result in high computation time. Random search, therefore, offers a more efficient alternative to grid search.
+**Random search** is a method where values are selected randomly within the search space. Suppose we need to optimize six hyperparameters, each with numerous possible values. Testing every combination (known as grid search) would result in high computation time. Random search selects a combination of random values for each hyperparameter from its respective pool evey time step and test the performance, offering a more efficient alternative to grid search.
 
 Execute `'opt_random_search_mg.m'` to perform a random search for optimizing hyperparameters in predicting Mackey-Glass system. We record the hyperparameter set that yields the lowest RMSE on the validation dataset. Using these optimal hyperparameters, the reservoir computer produced the following results:
 
@@ -111,7 +111,7 @@ Run `'comparison.m'` to compare the average values of RMSE and DV of 16 iteratio
 <img src='images/compare.png' width='800'>
 </p>
 
-In conclusion, reservoir computing is a powerful tool that can be applied to a variety of complex tasks. For simpler tasks, such as predicting the Lorenz system, a small reservoir network with randomly selected hyperparameters suffices. However, as tasks become more complex, optimizing hyperparameters becomes crucial for effective reservoir computing. Various optimization algorithms can be employed for this purpose, including random search and Bayesian optimization.
+In conclusion, reservoir computing is a powerful tool that can be applied to a variety of complex tasks. For simpler tasks, such as predicting the Lorenz system, a small reservoir network with randomly selected hyperparameters suffices. <b>However, as tasks become more complex, optimizing hyperparameters becomes crucial for effective reservoir computing</b>. Various optimization algorithms can be employed for this purpose, including random search and Bayesian optimization.
 
 <h2>More information</h2>
 
