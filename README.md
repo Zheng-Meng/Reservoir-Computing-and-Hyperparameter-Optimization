@@ -121,7 +121,7 @@ In conclusion, reservoir computing is a powerful tool that can be applied to a v
     - Increasing the size of the reservoir network can significantly enhance performance. For efficient hyperparameter optimization, you might start with a relatively small network, and then use a larger network combined with the optimized hyperparameters.
     - During hyperparameter optimization, consider setting a shorter prediction length initially and using a broader range of hyperparameters. After the initial optimization, in a second round, you can opt for a longer prediction length and narrow down the hyperparameters, focusing around the values obtained in the first round.
 
-If you have any questions or any suggestions, please do not hesitate to contact me.
+If you have any questions or any suggestions, please feel free to contact me.
 
 <h2>Cite our work</h2>
 
