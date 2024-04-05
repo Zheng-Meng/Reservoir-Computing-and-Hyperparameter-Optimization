@@ -48,7 +48,7 @@ where $x, y,$ and $z$ are proportional to the rate of convection, the horizontal
 
 As can be seen in the figure above, the reservoir computer gave us satisfactory performance on both short-term and long-term prediction. Note that the Lorenz system prediction is a relatively simple task so we choose a small network, and choose hyperparameters randomly. 
 
-We use **RMSE** (root-mean-square error) and **DV** (deviation value) to evaluate the performance of short- and long-term prediction, respectively. We define the DV calculation as follows: we place a uniform grid in a 2-d subspace with cell size $\Delta=0.05$, count the number of trajectory points in each cell for both the true and predicted attractors in a fixed time interval, and the DV is: 
+We use **RMSE** (root-mean-square error) and **DV** (deviation value) to evaluate the performance of short- and long-term prediction, respectively. We define the DV calculation (see our work at the end) as follows: we place a uniform grid in a 2-d subspace with cell size $\Delta=0.05$, count the number of trajectory points in each cell for both the true and predicted attractors in a fixed time interval, and the DV is: 
 
 $${\rm DV} = \sum_{i=1}^{m_x} \sum_{j=1}^{m_y} \sqrt{(f_{i,j} - \hat{f}_{i, j})^2 },$$
 
@@ -124,8 +124,9 @@ In conclusion, reservoir computing is a powerful tool that can be applied to a v
     - Increasing the size of the reservoir network can significantly enhance performance. For efficient hyperparameter optimization, you might start with a relatively small network, and then use a larger network combined with the optimized hyperparameters.
     - During hyperparameter optimization, consider setting a shorter prediction length initially and using a broader range of hyperparameters. After the initial optimization, in a second round, you can opt for a longer prediction length and narrow down the hyperparameters, focusing around the values obtained in the first round.
     - The reservoir state $r$ should be continuously maintained during both training and testing, and the final reservior state from training is the starting point for testing, to ensure seamless prediction.
+    - Uderstanding the meanings of hyperparameters is beneficial. For instance, the value of $\rho$ determines the memory ability of the reservoir, which explains predictions for complex systems like the Mackey-Glass system typically require a large $\rho$. In addition, introducing noise to the data for relatively complex tasks can significantly enhance the performance, which can be understood as stochastic resonance (see our work below).
 
-If you have any questions or any suggestions, please feel free to contact me.
+If you have any questions or any suggestions, please feel free to [contact me](zzhai6@asu.edu).
 
 <h2>Cite our work</h2>
 
