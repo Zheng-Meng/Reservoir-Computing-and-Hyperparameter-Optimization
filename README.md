@@ -126,7 +126,7 @@ In conclusion, reservoir computing is a powerful tool that can be applied to a v
     - The reservoir state $r$ should be continuously maintained during both training and testing, and the final reservior state from training is the starting point for testing, to ensure seamless prediction.
     - Uderstanding the meanings of hyperparameters is beneficial. For instance, the value of $\rho$ determines the memory ability of the reservoir, which explains predictions for complex systems like the Mackey-Glass system typically require a large $\rho$. In addition, introducing noise to the data for relatively complex tasks can significantly enhance the performance, which can be understood as stochastic resonance (see our work below).
 
-If you have any questions or any suggestions, please feel free to [contact me](zzhai6@asu.edu).
+If you have any questions or any suggestions, please feel free to [contact me](mailto:zzhai6@asu.edu).
 
 <h2>Cite our work</h2>
 
