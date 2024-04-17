@@ -117,14 +117,14 @@ In conclusion, reservoir computing is a powerful tool that can be applied to a v
 
 - The results were generated using MATLAB. A Python version is aslo available which includes only the reservoir computing prediction and Bayesian optimization.
 - Some applications:
-    - You can find the parameter aware reservoir computing for collapse prediction of the food-chain, voltage, and spatial-temporal Kuramoto-Sivashinsky systems on my friend's [Github page](https://github.com/lw-kong/Reservoir_with_a_Parameter_Channel_PRR2021).
-    - You can find the nonlinear tracking control achieved by reservoir comptuing with various chaotic and periodic trajectories examples on my [Github page](https://github.com/Zheng-Meng/TrackingControl) .
-    - You can find the parameters tracking by reservoir computing on my [Github page](https://github.com/Zheng-Meng/Parameter-Tracking-with-Machine-Learning).
+    - You can find the **parameter aware reservoir computing** for collapse prediction of the food-chain, voltage, and spatial-temporal Kuramoto-Sivashinsky systems on my friend's [Github page](https://github.com/lw-kong/Reservoir_with_a_Parameter_Channel_PRR2021).
+    - You can find the nonlinear **tracking control** achieved by reservoir comptuing with various chaotic and periodic trajectories examples on my [Github page](https://github.com/Zheng-Meng/TrackingControl) .
+    - You can find the **parameters extraction/tracking** by reservoir computing on my [Github page](https://github.com/Zheng-Meng/Parameter-Tracking-with-Machine-Learning).
 - Some tips:
-    - Increasing the size of the reservoir network can significantly enhance performance. For efficient hyperparameter optimization, you might start with a relatively small network, and then use a larger network combined with the optimized hyperparameters.
+    - Increasing the size of the reservoir network can significantly enhance performance. For efficient hyperparameter optimization, you might start with a relatively small network (to save time), and then use a larger network combined with the optimized hyperparameters.
     - During hyperparameter optimization, consider setting a shorter prediction length initially and using a broader range of hyperparameters. After the initial optimization, in a second round, you can opt for a longer prediction length and narrow down the hyperparameters, focusing around the values obtained in the first round.
-    - The reservoir state $r$ should be continuously maintained during both training and testing, and the final reservior state from training is the starting point for testing, to ensure seamless prediction.
-    - Uderstanding the meanings of hyperparameters is beneficial. For instance, the value of $\rho$ determines the memory ability of the reservoir, which explains predictions for complex systems like the Mackey-Glass system typically require a large $\rho$. In addition, introducing noise to the data for relatively complex tasks can significantly enhance the performance, which can be understood as stochastic resonance (see our work below).
+    - The reservoir state $r$ should be **continuously** maintained during both training and testing, and the final reservior state from training is the starting point for testing, to ensure seamless prediction.
+    - Uderstanding the meanings of hyperparameters is beneficial. For instance, the value of $\rho$ determines the memory ability of the reservoir, which explains predictions for complex systems like the Mackey-Glass system typically require a large $\rho$. In addition, introducing noise to the data for relatively complex tasks can significantly enhance the performance, which can be understood as **stochastic resonance** (see our work below).
 
 If you have any questions or any suggestions, please feel free to [contact me](mailto:zzhai6@asu.edu).
 
